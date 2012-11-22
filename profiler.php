@@ -1190,7 +1190,9 @@ class ProfilerRenderer
 	 */
 	public static function getPrettifyLocation()
 	{
-		return self::$prettifyLocation;
+		$relative_path = str_replace($_SERVER['DOCUMENT_ROOT'], "", __DIR__);
+		
+		return $relative_path . self::$prettifyLocation;
 	}
 	
 	/**
